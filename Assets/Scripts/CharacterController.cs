@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
     public AudioSource music;
     public AudioSource flap;
     public AudioSource pipe;
+    public Animation wingFlap;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +27,7 @@ public class CharacterController : MonoBehaviour
     }
 
     void Jump() {
+        wingFlap.Play();
         MyRigidbody2D.linearVelocity = Vector2.up * JumpForce;
         flap.Play();
     }
